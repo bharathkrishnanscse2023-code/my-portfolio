@@ -1,0 +1,149 @@
+--- RESUME ---
+BHARATH KRISHNAN S
+sbkcuddalore@gmail.com · +91 8754716433 · github.com/sbharathkrishnan28 · my-portfolio-two-xi-44.vercel.app · linkedin.com/in/bharath-krishnan-s
+Education
+Bachelor of Engineering in Computer Science and Engineering (B.E. CSE)2023 – 2027
+Chennai Institute of Technology and Applied Research, ChennaiCGPA: 9.05 / 10
+Professional Summary
+•CSE undergraduate specializing inMachine Learning,Data Science, andFull-Stack Development
+• Experienced in building and deploying end-to-endML pipelines, including data preprocessing, model development, evaluation,
+andAPI-based deploymentusingFastAPI,Flask, andDocker.
+• Proven problem-solving ability throughcompetitive programming, internships, andnational-level hackathon finals, with
+a strong focus on clean code, performance optimization, and scalability.
+•Quick learner with strongteamwork, communication, and analytical skills.
+Technical Skills
+•Programming Languages:Python, C, Java, JavaScript, SQL
+•Web & Backend:HTML, CSS, React.js, Node.js, Express.js, FastAPI, Flask, REST APIs
+• AI / ML & Data Science:Scikit-learn, TensorFlow, Keras, NLP, Sentiment Analysis, Time-Series Forecasting, Supervised &
+Unsupervised Learning, Computer Vision, OpenCV
+• Data Science & Tools:Pandas, NumPy, Matplotlib, Exploratory Data Analysis (EDA), Streamlit, Docker, Git, GitHub, VS
+Code, Jupyter Notebook.
+•Databases:PostgreSQL, MongoDB, MySQL
+•Areas of Interest:Artificial Intelligence, Machine Learning, Data Science, Quantum Computing
+Work Experience
+Machine Learning Intern—Saiket Systems (Remote)Mar – Apr 2026
+• Developed supervised ML models inPythonusingScikit-learnandTensorFlowfor real-world classification and regression
+problems, following an end-to-end workflow from data preprocessing to evaluation.
+• Performedexploratory data analysis (EDA)and feature engineering on structured datasets to improve model performance
+and interpretability.
+• Implemented and compared multiple algorithms (logistic regression,tree-based models, etc.), tuning hyperparameters and
+tracking metrics such as accuracy and F1-score.
+Front-End Developer Intern—SSV’s Traders (On-site)May 2024
+• Developed and deployed responsive UI components using HTML, CSS, and JavaScript, improving cross-device compatibility by
+30%.
+•Integrated frontend modules with live backend REST APIs, reducing data fetch latency by20%through optimized API calls.
+•Collaborated with a 4-member Agile team to deliver sprint features ahead of deadlines while maintaining code quality and
+usability.
+Data Science Intern|Cognifyz Technologies (Remote)Mar – Apr 2026
+•Gained Experience on applying ML and data analysis techniques to real-world tasks with strong attention to detail.
+• Demonstrated effective communication, exceptional coordination, and consistent enthusiasm in acquiring hands-on data science
+and model development skills.
+Projects
+FloSync – AI Flood Resilience PlatformPython, LSTM, FastAPI, React, DockerSept 2025
+•Integrated OpenWeatherMap and IMD APIs to fetch real-time rainfall and river-level data every15 minutesfor continuous
+monitoring.
+• Built and deployed an LSTM-based time-series forecasting model achieving92% accuracyfor 3-day flood risk prediction, with
+SMS alerts triggered within30 seconds.
+MarkTrade – Real-Time AI Stock Insight PlatformPython, FinBERT, NLP, StreamlitAug 2025
+•Implemented FinBERT-based sentiment analysis on10,000+ news headlines, generating buy/hold/sell signals with78%
+backtested accuracy.
+• Combined RSI and Moving Average indicators with AI insights, reducing false trading signals by25%and deployed a real-time
+Streamlit dashboard with3-second latency.
+AI Learning Assistant for Rural EducationPython, Hugging Face, TensorFlow LiteJul 2025
+• Built a bilingual (English/Tamil) adaptive AI tutor using Hugging Face transformers; the real-time quiz engine improved learner
+engagement by40%.
+•Optimized models with TensorFlow Lite for low-RAM (<2 GB) devices and implemented an offline-first architecture using
+service workers for rural school environments.
+AI-Powered Lost & Found SystemPython, OpenCV, ResNet50, MongoDBSep 2025
+•Built a Siamese Neural Network with ResNet50 embeddings; processed5,000+ imagesand achieved85%top-5 matching
+accuracy.
+•Reduced manual verification effort by70%using confidence-based filtering and an automated email alert system.
+Competitive Programming
+•LeetCode– Rating: 1490 Problems Solved: 450+bkvibesonly
+•CodeChef– Rating: 1158 Problems Solved: 200+sbkrishnan27
+•Codeforces– Rating: 1022 Problems Solved: 50+sbharathkrishnansbk
+Achievements & Activities
+•TCS CodeVita Season 12– Achieved Global Rank6599in Round 2 among200,000+participants worldwide.
+•National Hackathon Finalist– Shortlisted among top teams atHackOrbitand theNIT Trichy FinTech Hackathon.
+•NPTEL Elite Certification– Ethical Hacking by IIT Kharagpur with a73%score.
+•Secured1st placein theML Ware Hackathon Championshipconducted byIIT Varanasion Kaggle.
+Certifications & Coursework
+•AWS:Certified Cloud Practitioner — Generative AI Foundations — Machine Learning Foundations
+•IBM:AI Essentials — Web Development Essentials
+•Cisco:Intro to Networks — Cybersecurity Essentials — Data Analytics Essentials
+•NPTEL (IIT Kharagpur):Ethical Hacking – Elite Certification
+• Coursera:Data Structures & Algorithms — Python for Data Science — Google Cybersecurity — Data Visualization in Excel
+
+--- PROJECT DETAILS ---
+1. Smart Guru – Offline AI Voice Assistant 
+Built a bilingual AI chatbot with real-time voice interaction using speech-to-text and text-to-speech 
+Enabled seamless switching between online APIs and offline local LLMs for uninterrupted usage 
+Implemented dynamic language detection supporting English and regional languages 
+Designed a lightweight Flask-based system with fast response latency (<2 seconds) 
+Delivered accessibility solutions for rural and non-literate users through voice-first interface 
+Achieved ~92–95% speech accuracy and ~90% response relevance in real-time scenarios 
+
+2. MarkTrade – AI Stock Market Intelligence Platform 
+Developed an AI-driven platform for real-time stock insights and recommendations 
+Integrated sentiment analysis with live financial data for enhanced trading decisions 
+Built a user-friendly dashboard for trend visualization and actionable insights 
+Reduced data complexity by transforming raw market data into intelligent predictions 
+Improved decision-making efficiency by ~40% for beginner and advanced traders 
+Achieved ~88–92% sentiment accuracy and ~80–85% prediction confidence 
+
+3. Credit Intelligence Dashboard – Financial Risk Analyzer 
+Designed a Flask-based dashboard for real-time company credit score analysis 
+Implemented historical trend visualization and feature importance tracking 
+Integrated news/event impact analysis on financial performance 
+Built scalable backend with efficient SQLite data handling 
+Enabled early identification of high-risk companies using predictive analytics 
+Achieved ~85–90% risk prediction accuracy with <500 ms response time 
+
+4. AI Lost & Found – Smart Recognition System 
+Developed an AI system using face recognition and object detection for lost item tracking 
+Enabled real-time matching of detected faces/objects with stored database records 
+Built responsive frontend with admin dashboard and live notifications 
+Integrated OpenCV and ML models for accurate detection and identification 
+Reduced manual search effort by ~70% in public and institutional environments 
+Achieved ~93–96% face recognition accuracy and ~88–92% object detection accuracy 
+
+5. Krishisalah – AI Crop & Market Prediction System 
+Built an AI-powered system for crop recommendation based on soil and environmental inputs 
+Integrated real-time market analysis and ML-based price forecasting 
+Developed personalized dashboards with alerts for farmers 
+Incorporated weather forecasting for improved agricultural planning 
+Enhanced farming productivity and decision-making through predictive insights 
+Achieved ~85–90% prediction accuracy with reliable market intelligence 
+
+6. AI Recruiter – Smart Hiring Automation Platform 
+Developed an AI recruitment platform for automated resume screening and candidate ranking 
+Implemented NLP-based matching to align candidates with job requirements 
+Integrated bias detection to ensure fair and transparent hiring decisions 
+Built real-time recruitment analytics dashboard for performance tracking 
+Reduced manual screening effort and hiring time significantly 
+Achieved ~90% screening accuracy with improved recruitment efficiency 
+
+7. GraminAI – Offline Edge AI Farming Assistant 
+Built a multimodal AI system combining voice and image input for crop disease detection 
+Enabled fully offline edge AI processing using TensorFlow Lite and MobileNetV2 
+Designed a “Talk & Listen” vernacular interface for illiterate farmers 
+Delivered real-time diagnosis within 2 seconds directly on mobile devices 
+Reduced pesticide and resource usage by up to 30–40% through precise recommendations 
+Achieved ~90%+ disease classification accuracy improving crop yield by 10–15% 
+
+8. ET StorySphere – AI News Intelligence Engine 
+Developed an AI platform that converts multiple news articles into a unified interactive story 
+Implemented persona-based explanations for students, investors, founders, and CXOs 
+Built interactive timeline visualization showing evolution of events 
+Integrated RAG-based conversational AI for context-aware Q&A 
+Enabled AI-generated video explainers and multilingual news delivery 
+Improved news understanding time by ~50% and user engagement by ~40% 
+
+9. Autonomous Constellation Manager – Satellite Operations AI System 
+Developed a real-time satellite monitoring system for collision risk detection and avoidance 
+Implemented autonomous maneuver planning using ML/RL-based decision models 
+Built live simulation engine with orbital dynamics and telemetry processing 
+Designed interactive dashboard for mission analytics and visualization 
+Improved operational safety and fuel efficiency through optimized maneuver strategies 
+Achieved high prediction reliability with scalable real-time processing for large constellations
+

@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bharath Krishnan S | AI/ML Portfolio</title>
+  <meta name="description" content="Portfolio of Bharath Krishnan S - AI/ML engineer and full-stack developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #06171b;
+      --bg-soft: #0c262c;
+      --panel: #112f36;
+      --text: #f3f8f8;
+      --muted: #a2c1c6;
+      --line: #2f535c;
+      --accent: #19d4ba;
+      --accent-2: #ff7f4d;
+      --accent-3: #ffd166;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 10% 0%, #12323a, var(--bg) 38%),
+                  radial-gradient(circle at 95% 15%, #2f3323 0%, transparent 40%),
+                  var(--bg);
+      scroll-behavior: smooth;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(60px);
+      z-index: -1;
+      opacity: 0.35;
+      animation: drift 16s ease-in-out infinite;
+    }
+
+    body::before {
+      background: var(--accent);
+      top: -110px;
+      right: -80px;
+    }
+
+    body::after {
+      background: var(--accent-2);
+      bottom: -120px;
+      left: -80px;
+      animation-delay: -7s;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(30px) translateX(20px); }
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(47, 83, 92, 0.45);
+      background: rgba(6, 23, 27, 0.74);
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-size: 1.02rem;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.42rem 0.72rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.22s ease;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a:hover {
+      border-color: var(--line);
+      color: #fff;
+      background: rgba(47, 83, 92, 0.2);
+    }
+
+    .hero {
+      padding: 4.5rem 0 2.2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side,
+    .panel {
+      background: linear-gradient(140deg, rgba(17, 47, 54, 0.95), rgba(12, 38, 44, 0.94));
+      border: 1px solid rgba(47, 83, 92, 0.8);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      right: -100px;
+      top: -80px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(25, 212, 186, 0.26), transparent 70%);
+      z-index: -1;
+    }
+
+    .title-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: rgba(25, 212, 186, 0.08);
+      border: 1px solid rgba(25, 212, 186, 0.3);
+      padding: 0.35rem 0.62rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.85rem, 2.8vw, 2.9rem);
+      line-height: 1.1;
+    }
+
+    .hero h1 .stroke {
+      color: transparent;
+      -webkit-text-stroke: 1px var(--accent-3);
+    }
+
+    .hero p {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      max-width: 64ch;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      background: #18434c;
+      color: #fff;
+      padding: 0.65rem 0.95rem;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #1e515b;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #0ea893);
+      color: #032724;
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .btn.primary:hover {
+      background: linear-gradient(135deg, #2de0c7, #11b59f);
+    }
+
+    .hero-side {
+      padding: 1.2rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .portrait {
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(8, 27, 31, 0.8);
+      padding: 0.75rem;
+      min-height: 240px;
+    }
+
+    .portrait img {
+      width: min(100%, 260px);
+      border-radius: 14px;
+      object-fit: cover;
+      aspect-ratio: 3 / 4;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem;
+    }
+
+    .stat {
+      background: rgba(8, 27, 31, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.7rem;
+      text-align: center;
+    }
+
+    .stat strong {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.2rem;
+      display: block;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    section {
+      padding: 1.1rem 0 2rem;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.35rem, 2vw, 1.95rem);
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .panel {
+      padding: 1.2rem;
+    }
+
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
+    }
+
+    .chip {
+      padding: 0.35rem 0.62rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(8, 27, 31, 0.8);
+      font-size: 0.86rem;
+      color: #d4eaed;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .experience-item {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.85rem;
+      background: rgba(8, 27, 31, 0.75);
+    }
+
+    .experience-item h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .experience-item p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.93rem;
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: rgba(8, 27, 31, 0.7);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: #fff;
+      border-color: rgba(25, 212, 186, 0.6);
+      background: rgba(25, 212, 186, 0.14);
+    }
+
+    .project-list {
+      display: grid;
+      gap: 0.72rem;
+      max-height: 520px;
+      overflow: auto;
+      padding-right: 0.3rem;
+    }
+
+    .project-btn {
+      text-align: left;
+      border: 1px solid var(--line);
+      background: rgba(8, 27, 31, 0.78);
+      border-radius: 12px;
+      color: var(--text);
+      padding: 0.78rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-btn:hover,
+    .project-btn.active {
+      transform: translateX(4px);
+      border-color: var(--accent);
+      background: rgba(25, 212, 186, 0.12);
+    }
+
+    .project-btn strong {
+      display: block;
+      font-size: 0.98rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-btn span {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .spotlight {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+    }
+
+    .spotlight h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .spotlight .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.7rem 0 0.9rem;
+    }
+
+    .spotlight .metric {
+      background: rgba(8, 27, 31, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.28rem 0.5rem;
+      color: #cbe3e6;
+      font-size: 0.82rem;
+    }
+
+    .spotlight ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .flow {
+      margin-top: 1.1rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .flow button {
+      border: 1px solid var(--line);
+      background: #163840;
+      color: #fff;
+      border-radius: 10px;
+      padding: 0.55rem 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .flow button:hover {
+      border-color: var(--accent-2);
+      transform: translateY(-2px);
+    }
+
+    .progress-wrap {
+      margin-top: 0.95rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      height: 10px;
+      background: rgba(8, 27, 31, 0.72);
+    }
+
+    .progress {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+      transition: width 0.32s ease;
+    }
+
+    .achievements {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+    }
+
+    .achievement {
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      padding: 0.9rem;
+      background: rgba(8, 27, 31, 0.75);
+    }
+
+    .achievement h3 {
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+    .achievement p {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    footer {
+      padding: 1rem 0 2.4rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .showcase,
+      .achievements {
+        grid-template-columns: 1fr;
+      }
+
+      .spotlight,
+      .project-list {
+        max-height: initial;
+      }
+
+      .spotlight {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding-top: 3.8rem; }
+      .hero-main,
+      .hero-side,
+      .panel { padding: 1rem; }
+      .mini-stats { grid-template-columns: 1fr 1fr 1fr; }
+      .nav-links { gap: 0.3rem; }
+      .nav-links a { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">BHARATH KRISHNAN S</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="hero-main fade-up">
+          <span class="title-tag">AI + Full Stack Developer</span>
+          <h1>
+            Building <span class="stroke">practical intelligence</span><br />
+            for real-world systems.
+          </h1>
+          <p>
+            CSE undergraduate focused on machine learning, data science, and scalable full-stack products.
+            I design end-to-end systems from model training to API deployment and clean frontend experiences.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">Explore Projects</a>
+            <a class="btn" href="resume3.pdf" target="_blank" rel="noopener">Open Resume</a>
+            <a class="btn" href="https://github.com/sbharathkrishnan28" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <aside class="hero-side fade-up">
+          <div class="portrait">
+            <img src="Bharath Krishnan S.jpeg" alt="Portrait of Bharath Krishnan S" />
+          </div>
+          <div class="mini-stats">
+            <div class="stat">
+              <strong>9+</strong>
+              <span>Major Projects</span>
+            </div>
+            <div class="stat">
+              <strong>450+</strong>
+              <span>LeetCode Solved</span>
+            </div>
+            <div class="stat">
+              <strong>9.05</strong>
+              <span>CGPA</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="fade-up">
+      <div class="container about-grid">
+        <article class="panel">
+          <div class="section-head">
+            <h2>Profile Snapshot</h2>
+          </div>
+          <p>
+            I work on AI-assisted products that blend predictive modeling, NLP, computer vision, and responsive web interfaces.
+            My projects focus on social impact, decision intelligence, and real-time automation.
+          </p>
+          <p>
+            Education: B.E. CSE (2023-2027), Chennai Institute of Technology and Applied Research, Chennai.
+          </p>
+        </article>
+
+        <article class="panel">
+          <div class="section-head">
+            <h2>Technical Toolkit</h2>
+          </div>
+          <div class="skill-cloud" id="skills"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="fade-up">
+      <div class="container panel">
+        <div class="section-head">
+          <h2>Experience Timeline</h2>
+          <p>Hands-on roles across ML, data science, and frontend engineering</p>
+        </div>
+        <div class="experience-list" id="experienceList"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="fade-up">
+      <div class="container">
+        <div class="section-head">
+          <h2>Interactive Project Showcase</h2>
+          <p>Use filters + flow buttons to navigate spotlight projects</p>
+        </div>
+
+        <div class="showcase">
+          <article class="panel">
+            <div class="controls" id="filters"></div>
+            <div class="project-list" id="projectList"></div>
+          </article>
+
+          <article class="panel spotlight" id="spotlight">
+            <h3 id="spotlightTitle"></h3>
+            <div class="meta" id="spotlightMeta"></div>
+            <ul id="spotlightBullets"></ul>
+            <div class="progress-wrap">
+              <div class="progress" id="showcaseProgress"></div>
+            </div>
+            <div class="flow">
+              <button type="button" id="prevBtn">Previous</button>
+              <button type="button" id="nextBtn">Next</button>
+              <button type="button" id="randomBtn">Surprise Me</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="fade-up">
+      <div class="container">
+        <div class="section-head">
+          <h2>Highlights</h2>
+        </div>
+        <div class="achievements" id="achievementsGrid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-up">
+      <div class="container panel">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>Let us build impactful systems together</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:sbkcuddalore@gmail.com">sbkcuddalore@gmail.com</a>
+          <a class="btn" href="https://linkedin.com/in/bharath-krishnan-s" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="tel:+918754716433">+91 87547 16433</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Designed and engineered by Bharath Krishnan S</div>
+  </footer>
+
+  <script>
+    const skills = [
+      "Python", "JavaScript", "Java", "C", "SQL", "FastAPI", "Flask", "React", "Node.js", "Express",
+      "TensorFlow", "Scikit-learn", "Keras", "NLP", "OpenCV", "Pandas", "NumPy", "MongoDB", "PostgreSQL", "Docker"
+    ];
+
+    const experience = [
+      {
+        title: "Machine Learning Intern - Saiket Systems",
+        period: "Mar 2026 - Apr 2026",
+        points: "Built supervised models with Scikit-learn and TensorFlow; performed EDA, feature engineering, and metric-focused model tuning."
+      },
+      {
+        title: "Front-End Developer Intern - SSV's Traders",
+        period: "May 2024",
+        points: "Developed responsive UI modules and integrated live REST APIs, improving compatibility and reducing data fetch latency."
+      },
+      {
+        title: "Data Science Intern - Cognifyz Technologies",
+        period: "Mar 2026 - Apr 2026",
+        points: "Applied ML and analytics workflows on real datasets with strong attention to communication, collaboration, and delivery quality."
+      }
+    ];
+
+    const projects = [
+      {
+        title: "Smart Guru - Offline AI Voice Assistant",
+        tags: ["AI", "NLP", "Flask"],
+        metrics: ["Speech Accuracy: 92-95%", "Latency: <2s", "Response Relevance: ~90%"],
+        bullets: [
+          "Built bilingual voice assistant using speech-to-text and text-to-speech.",
+          "Enabled smooth online/offline LLM fallback for uninterrupted usage.",
+          "Designed for accessibility in rural and non-literate environments."
+        ]
+      },
+      {
+        title: "MarkTrade - AI Stock Market Intelligence Platform",
+        tags: ["AI", "FinTech", "NLP"],
+        metrics: ["Sentiment Accuracy: 88-92%", "Prediction Confidence: 80-85%"],
+        bullets: [
+          "Combined sentiment analysis with live financial market signals.",
+          "Created intuitive dashboard for trends and actionable suggestions.",
+          "Improved beginner-to-advanced trading decision speed by ~40%."
+        ]
+      },
+      {
+        title: "Credit Intelligence Dashboard - Risk Analyzer",
+        tags: ["Data Science", "Flask", "Analytics"],
+        metrics: ["Risk Prediction: 85-90%", "Response Time: <500ms"],
+        bullets: [
+          "Built real-time company credit scoring dashboard with Flask and SQLite.",
+          "Visualized historical trends and feature importance for explainability.",
+          "Integrated event impact analysis for proactive risk identification."
+        ]
+      },
+      {
+        title: "AI Lost & Found - Smart Recognition System",
+        tags: ["Computer Vision", "OpenCV", "Full Stack"],
+        metrics: ["Face Accuracy: 93-96%", "Object Detection: 88-92%"],
+        bullets: [
+          "Implemented face and object matching against database records.",
+          "Designed responsive dashboard with live admin notifications.",
+          "Reduced manual search overhead by ~70%."
+        ]
+      },
+      {
+        title: "Krishisalah - AI Crop and Market Prediction",
+        tags: ["AI", "Agritech", "Forecasting"],
+        metrics: ["Prediction Accuracy: 85-90%"],
+        bullets: [
+          "Recommended crops from soil and environmental conditions.",
+          "Combined weather intelligence with market price forecasting.",
+          "Delivered personalized alerts for better farmer decisions."
+        ]
+      },
+      {
+        title: "AI Recruiter - Hiring Automation Platform",
+        tags: ["NLP", "AI", "Dashboard"],
+        metrics: ["Screening Accuracy: ~90%", "Hiring Time: Significantly Reduced"],
+        bullets: [
+          "Automated resume ranking and candidate-job matching.",
+          "Added bias detection for fair and transparent screening.",
+          "Built real-time analytics dashboard for recruitment teams."
+        ]
+      },
+      {
+        title: "GraminAI - Offline Edge Farming Assistant",
+        tags: ["Edge AI", "Computer Vision", "Agritech"],
+        metrics: ["Classification Accuracy: 90%+", "Diagnosis: ~2s"],
+        bullets: [
+          "Created multimodal voice + image assistant for disease detection.",
+          "Ran fully offline on mobile with TensorFlow Lite and MobileNetV2.",
+          "Improved crop yield while reducing pesticide/resource usage."
+        ]
+      },
+      {
+        title: "ET StorySphere - AI News Intelligence Engine",
+        tags: ["RAG", "NLP", "Visualization"],
+        metrics: ["Understanding Time: -50%", "Engagement: +40%"],
+        bullets: [
+          "Unified multiple news sources into one interactive storyline.",
+          "Added persona-based explainers for varied user groups.",
+          "Enabled context-aware Q and A with conversational AI."
+        ]
+      },
+      {
+        title: "Autonomous Constellation Manager",
+        tags: ["ML", "Simulation", "SpaceTech"],
+        metrics: ["Collision Monitoring: Real-Time", "Maneuver Planning: Autonomous"],
+        bullets: [
+          "Developed satellite collision risk monitoring and avoidance support.",
+          "Built simulation engine with orbital telemetry processing.",
+          "Improved operational safety and fuel strategy efficiency."
+        ]
+      }
+    ];
+
+    const achievements = [
+      {
+        title: "TCS CodeVita Season 12",
+        text: "Global Rank 6599 in Round 2 among 200,000+ participants worldwide."
+      },
+      {
+        title: "National Hackathon Finalist",
+        text: "Finalist at HackOrbit and NIT Trichy FinTech Hackathon."
+      },
+      {
+        title: "ML Ware Hackathon Champion",
+        text: "Secured 1st place in IIT Varanasi Kaggle-hosted championship."
+      },
+      {
+        title: "NPTEL Elite - Ethical Hacking",
+        text: "Earned Elite certification from IIT Kharagpur with a 73% score."
+      },
+      {
+        title: "Competitive Coding Consistency",
+        text: "Solved 450+ LeetCode, 200+ CodeChef, and 50+ Codeforces problems with consistent ranking growth."
+      },
+      {
+        title: "High Academic Performance",
+        text: "Maintaining a CGPA of 9.05 while executing intensive AI/ML and full-stack project work."
+      },
+      {
+        title: "Multi-Internship Impact",
+        text: "Delivered measurable improvements in model quality, frontend responsiveness, and API efficiency across internships."
+      },
+      {
+        title: "Cloud and AI Certifications",
+        text: "Completed AWS Cloud Practitioner plus foundational tracks in Generative AI and Machine Learning."
+      }
+    ];
+
+    const state = {
+      filter: "All",
+      visibleProjects: projects,
+      selectedIndex: 0
+    };
+
+    const el = {
+      skills: document.getElementById("skills"),
+      experienceList: document.getElementById("experienceList"),
+      filters: document.getElementById("filters"),
+      projectList: document.getElementById("projectList"),
+      spotlightTitle: document.getElementById("spotlightTitle"),
+      spotlightMeta: document.getElementById("spotlightMeta"),
+      spotlightBullets: document.getElementById("spotlightBullets"),
+      progress: document.getElementById("showcaseProgress"),
+      prevBtn: document.getElementById("prevBtn"),
+      nextBtn: document.getElementById("nextBtn"),
+      randomBtn: document.getElementById("randomBtn"),
+      achievementsGrid: document.getElementById("achievementsGrid")
+    };
+
+    function renderSkills() {
+      el.skills.innerHTML = skills.map((skill) => `<span class="chip">${skill}</span>`).join("");
+    }
+
+    function renderExperience() {
+      el.experienceList.innerHTML = experience.map((item) => `
+        <article class="experience-item">
+          <h3>${item.title} <small style="color: var(--accent-3); font-weight: 600;">(${item.period})</small></h3>
+          <p>${item.points}</p>
+        </article>
+      `).join("");
+    }
+
+    function getFilters() {
+      const tags = new Set(["All"]);
+      projects.forEach((p) => p.tags.forEach((tag) => tags.add(tag)));
+      return Array.from(tags);
+    }
+
+    function renderFilters() {
+      const filters = getFilters();
+      el.filters.innerHTML = filters.map((tag) => `
+        <button type="button" class="filter-btn ${tag === state.filter ? "active" : ""}" data-filter="${tag}">${tag}</button>
+      `).join("");
+
+      el.filters.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          state.filter = btn.dataset.filter;
+          state.visibleProjects = state.filter === "All"
+            ? projects
+            : projects.filter((p) => p.tags.includes(state.filter));
+          state.selectedIndex = 0;
+          renderFilters();
+          renderProjectList();
+          renderSpotlight();
+        });
+      });
+    }
+
+    function renderProjectList() {
+      el.projectList.innerHTML = state.visibleProjects.map((project, i) => `
+        <button type="button" class="project-btn ${i === state.selectedIndex ? "active" : ""}" data-index="${i}">
+          <strong>${project.title}</strong>
+          <span>${project.tags.join(" • ")}</span>
+        </button>
+      `).join("");
+
+      el.projectList.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          state.selectedIndex = Number(btn.dataset.index);
+          renderProjectList();
+          renderSpotlight();
+        });
+      });
+    }
+
+    function renderSpotlight() {
+      const current = state.visibleProjects[state.selectedIndex];
+      if (!current) {
+        el.spotlightTitle.textContent = "No projects available for this filter";
+        el.spotlightMeta.innerHTML = "";
+        el.spotlightBullets.innerHTML = "";
+        el.progress.style.width = "0%";
+        return;
+      }
+
+      el.spotlightTitle.textContent = current.title;
+      el.spotlightMeta.innerHTML = current.metrics.map((m) => `<span class="metric">${m}</span>`).join("");
+      el.spotlightBullets.innerHTML = current.bullets.map((b) => `<li>${b}</li>`).join("");
+
+      const denominator = Math.max(state.visibleProjects.length - 1, 1);
+      const progress = (state.selectedIndex / denominator) * 100;
+      el.progress.style.width = `${progress}%`;
+    }
+
+    function bindFlowButtons() {
+      el.prevBtn.addEventListener("click", () => {
+        if (!state.visibleProjects.length) return;
+        state.selectedIndex = (state.selectedIndex - 1 + state.visibleProjects.length) % state.visibleProjects.length;
+        renderProjectList();
+        renderSpotlight();
+      });
+
+      el.nextBtn.addEventListener("click", () => {
+        if (!state.visibleProjects.length) return;
+        state.selectedIndex = (state.selectedIndex + 1) % state.visibleProjects.length;
+        renderProjectList();
+        renderSpotlight();
+      });
+
+      el.randomBtn.addEventListener("click", () => {
+        if (!state.visibleProjects.length) return;
+        let next = Math.floor(Math.random() * state.visibleProjects.length);
+        if (state.visibleProjects.length > 1 && next === state.selectedIndex) {
+          next = (next + 1) % state.visibleProjects.length;
+        }
+        state.selectedIndex = next;
+        renderProjectList();
+        renderSpotlight();
+      });
+    }
+
+    function renderAchievements() {
+      el.achievementsGrid.innerHTML = achievements.map((item) => `
+        <article class="achievement">
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </article>
+      `).join("");
+    }
+
+    function setupRevealAnimation() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16 });
+
+      document.querySelectorAll(".fade-up").forEach((item, i) => {
+        item.style.transitionDelay = `${Math.min(i * 0.08, 0.35)}s`;
+        observer.observe(item);
+      });
+    }
+
+    function init() {
+      renderSkills();
+      renderExperience();
+      renderFilters();
+      renderProjectList();
+      renderSpotlight();
+      bindFlowButtons();
+      renderAchievements();
+      setupRevealAnimation();
+    }
+
+    init();
+  </script>
+</body>
+</html>
