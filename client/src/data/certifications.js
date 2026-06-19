@@ -1,0 +1,31 @@
+export const awards = [
+  { icon: '🏆', title: 'IIT Varanasi ML Ware Champion', text: '1st place in the ML Ware Hackathon Championship on Kaggle — beat hundreds of teams in ML competition.' },
+  { icon: '🚀', title: 'Bharatiya Antariksh (ISRO) Hackathon', text: 'Built UrbanCoolAI — spatial heat island analysis platform for Indian cities using DBSCAN clustering.' },
+  { icon: '🏭', title: 'MS Build AI Hackathon', text: 'Developed NexSight AI — manufacturing intelligence platform with predictive analytics and anomaly detection.' },
+  { icon: '🎯', title: 'National Hackathon Finalist — HackOrbit', text: 'Top teams at HackOrbit national-level hackathon with AI-based solutions.' },
+  { icon: '💰', title: 'NIT Trichy FinTech Hackathon Finalist', text: 'Built fintech solutions competing against teams from top engineering institutions.' },
+  { icon: '🌐', title: 'TCS CodeVita S12 — Global Rank 6599', text: 'Top 3% globally in TCS CodeVita Season 12 competitive coding championship.' },
+  { icon: '🌐', title: 'TCS CodeVita S13 — Global Rank 5107', text: 'Improved global rank in Season 13, placing in top 2% of all participants worldwide.' },
+  { icon: '🔐', title: 'NPTEL Ethical Hacking — Elite', text: 'IIT Kharagpur certified, scored 73% — earned Elite certification in cybersecurity.' },
+  { icon: '📊', title: 'Kaggle Competition Participant', text: 'Active data science competitor — traffic demand prediction, ML challenges, and dataset contributions.' },
+  { icon: '💻', title: '700+ Problems Solved', text: 'Consistent competitive programmer across LeetCode (450+), CodeChef (200+), and Codeforces (50+).' },
+  { icon: '🎓', title: '9.05 CGPA — CSE Department Topper', text: 'Top academic performer in B.E. Computer Science at Chennai Institute of Technology.' },
+  { icon: '📂', title: '25+ GitHub Repositories', text: 'Active open-source contributor with 25+ public repositories spanning ML, NLP, CV, and full-stack.' },
+];
+
+export const certs = [
+  ['AWS', 'Cloud Practitioner Essentials'],
+  ['AWS', 'Generative AI Foundations'],
+  ['AWS', 'Machine Learning Foundations'],
+  ['IBM', 'AI Essentials'],
+  ['IBM', 'Web Development Essentials'],
+  ['Cisco', 'Introduction to Networks'],
+  ['Cisco', 'Cybersecurity Essentials'],
+  ['Cisco', 'Data Analytics Essentials'],
+  ['Coursera', 'Data Structures & Algorithms'],
+  ['Coursera', 'Python for Data Science'],
+  ['Coursera', 'Google Cybersecurity Professional'],
+  ['NPTEL', 'Ethical Hacking — IIT Kharagpur'],
+  ['Google', 'AI & ML Essentials'],
+  ['Microsoft', 'Azure AI Fundamentals'],
+];
