@@ -1,5 +1,7 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { config } from './config.js';
 import { logger } from './utils/logger.js';
 import { apiLimiter } from './middleware/rateLimit.js';
@@ -29,7 +31,15 @@ app.use('/api/feedback', feedbackRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/stats', statsRoutes);
 
-app.use(notFound);
-app.use(errorHandler);
+// unknown /api routes → JSON 404
+app.use('/api', notFound);
+app.use('/api', errorHandler);
+
+// serve the built React client (production single-service deploy)
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const clientDist = path.resolve(__dirname, '../../client/dist');
+app.use(express.static(clientDist));
+// SPA fallback: any non-/api route returns index.html
+app.get('*', (_req, res) => res.sendFile(path.join(clientDist, 'index.html')));
 
 export default app;
