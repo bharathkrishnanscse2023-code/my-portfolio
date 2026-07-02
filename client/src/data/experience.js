@@ -5,9 +5,9 @@ export const experience = [
     company: 'Saiket Systems',
     type: 'internship',
     points: [
-      'Built classification & regression models with Scikit-learn and TensorFlow, tuned hyperparameters and evaluated on accuracy and F1-score.',
-      'Ran EDA and feature engineering to lift model performance and interpretability.',
-      'Delivered production-ready ML pipelines for client data processing.',
+      'Architected classification and regression models using Scikit-learn and TensorFlow, performing rigorous hyperparameter optimization to maximize F1-score and accuracy.',
+      'Conducted advanced Exploratory Data Analysis (EDA) and robust feature engineering to enhance model interpretability and predictive performance.',
+      'Designed and deployed scalable, production-ready machine learning pipelines for automated client data ingestion and processing.',
     ],
   },
   {
@@ -16,9 +16,9 @@ export const experience = [
     company: 'Cognifyz Technologies',
     type: 'internship',
     points: [
-      'Applied ML and data-analysis techniques on real-world datasets.',
-      'Strengthened model development, data processing and analytical problem-solving.',
-      'Created automated reporting dashboards for stakeholder presentations.',
+      'Executed sophisticated machine learning and statistical analysis techniques on large-scale, real-world datasets to extract actionable insights.',
+      'Accelerated end-to-end model development lifecycles, from complex data preprocessing to analytical problem resolution.',
+      'Developed automated, dynamic reporting dashboards to facilitate data-driven decision-making for key stakeholders.',
     ],
   },
   {
@@ -27,9 +27,9 @@ export const experience = [
     company: "SSV's Traders",
     type: 'internship',
     points: [
-      'Developed responsive UI (HTML, CSS, JS), improving compatibility 30% in a 4-member Agile team.',
-      'Integrated REST APIs, cutting data-fetch latency by 20%.',
-      'Implemented pixel-perfect designs from Figma mockups across multiple breakpoints.',
+      'Engineered responsive, highly-optimized user interfaces leveraging modern web standards (HTML5, CSS3, JavaScript), improving cross-browser compatibility by 30% within a fast-paced Agile framework.',
+      'Architected seamless integrations with RESTful APIs, optimizing payload delivery and reducing data-fetch latency by 20%.',
+      'Translated complex Figma mockups into pixel-perfect, scalable frontend components across all responsive breakpoints.',
     ],
   },
 ];

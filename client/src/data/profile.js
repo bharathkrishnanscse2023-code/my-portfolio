@@ -18,7 +18,7 @@ export const profile = {
     'Full-Stack Developer',
     'NLP Specialist',
   ],
-  bio: 'Computer Science undergraduate who ships real AI systems — flood-prediction pipelines, financial NLP, computer-vision matching, railway safety AI — and backs it with competitive-programming rigor, national hackathon wins, and 25+ GitHub repositories.',
+  bio: 'Innovative Software Engineer and AI Researcher specializing in architecting scalable, real-world machine learning systems. Proven expertise in engineering high-throughput predictive pipelines, enterprise-grade computer vision engines, and advanced NLP frameworks. Demonstrated track record of algorithmic excellence through competitive programming rigour, multiple national hackathon victories, and extensive open-source engineering.',
   education: {
     degree: 'B.E. Computer Science & Engineering',
     university: 'Chennai Institute of Technology & Applied Research',
@@ -34,5 +34,9 @@ export const profile = {
     { to: 5, suffix: '+', label: 'Hackathon Wins' },
   ],
   interests: ['Quantum Computing', 'Edge AI', 'Reinforcement Learning', 'Space Tech', 'Competitive Programming'],
-  resumeFile: '/resume.pdf',
+  // Role-targeted resumes (files live in client/public)
+  resumeAIML: '/Bharath_Krishnan_S_resume_AIML.pdf',
+  resumeFSD: '/Bharath_Krishnan_S_resume_FSD.pdf',
+  // Primary/default resume used by single-link spots (Navbar, Footer)
+  resumeFile: '/Bharath_Krishnan_S_resume_AIML.pdf',
 };

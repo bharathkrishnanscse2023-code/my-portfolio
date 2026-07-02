@@ -44,9 +44,14 @@ export default function About() {
               <div className="kv"><span>github_repos</span><span className="live">25+</span></div>
               <div className="kv"><span>problems</span><span>700+ solved</span></div>
             </div>
-            <a href={profile.resumeFile} className="btn btn-resume about-resume" target="_blank" rel="noopener">
-              📄 View Full Resume (PDF)
-            </a>
+            <div className="about-resumes">
+              <a href={profile.resumeAIML} className="btn btn-resume about-resume" target="_blank" rel="noopener" download>
+                📄 AI/ML Resume (PDF)
+              </a>
+              <a href={profile.resumeFSD} className="btn btn-resume about-resume" target="_blank" rel="noopener" download>
+                📄 Full-Stack Resume (PDF)
+              </a>
+            </div>
           </div>
         </div>
       </div>

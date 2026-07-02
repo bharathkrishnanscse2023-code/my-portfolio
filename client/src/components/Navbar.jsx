@@ -6,14 +6,8 @@ const LINKS = [
   ['skills', 'skills'], ['code', 'code'], ['awards', 'awards'], ['github', 'github'],
 ];
 
-export default function Navbar({ active }) {
-  const [scrolled, setScrolled] = useState(false);
+export default function Navbar({ active, scrolled }) {
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(scrollY > 40);
-    addEventListener('scroll', onScroll, { passive: true });
-    return () => removeEventListener('scroll', onScroll);
-  }, []);
   return (
     <nav className={scrolled ? 'scrolled' : ''}>
       <div className="nav-inner">

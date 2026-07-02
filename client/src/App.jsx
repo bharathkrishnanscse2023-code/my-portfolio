@@ -1,6 +1,7 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState, useEffect } from 'react';
+import LandingPage from './components/LandingPage.jsx';
 import Boot from './components/Boot.jsx';
-import NeuralBackground from './components/NeuralBackground.jsx';
+import CyberBackground from './components/CyberBackground.jsx';
 import Hud from './components/Hud.jsx';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
@@ -23,20 +24,33 @@ import { useScrollSpy } from './hooks/useScrollSpy.js';
 const SECTION_IDS = ['about', 'experience', 'projects', 'skills', 'code', 'awards', 'github', 'contact'];
 
 export default function App() {
+  const [launched, setLaunched] = useState(false);
   const [booted, setBooted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const behaviour = useBehaviour(SECTION_IDS.length);
   const onSeen = useCallback((id) => behaviour.see(id), [behaviour]);
   const active = useScrollSpy(useMemo(() => SECTION_IDS, []), onSeen);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
-      {!booted && <Boot onDone={() => setBooted(true)} />}
-      <NeuralBackground />
+      <CyberBackground />
       <div className="grid-overlay" />
       <div className="scanline" />
 
-      <Hud />
-      <Navbar active={active} />
+      {!launched && <LandingPage onLaunch={() => setLaunched(true)} />}
+      {launched && !booted && <Boot onDone={() => setBooted(true)} />}
+
+      <div style={{ opacity: booted ? 1 : 0, transition: 'opacity 0.8s ease' }}>
+        <header className={`sys-header ${scrolled ? 'scrolled' : ''}`}>
+          <Hud />
+          <Navbar active={active} scrolled={scrolled} />
+        </header>
 
       <main>
         <Hero booted={booted} />
@@ -55,6 +69,7 @@ export default function App() {
       <BehaviourConsole snap={behaviour.snap} total={behaviour.totalSections} />
       <BackToTop />
       <ConsoleCommands onCommand={behaviour.bump} />
+      </div>
     </>
   );
 }

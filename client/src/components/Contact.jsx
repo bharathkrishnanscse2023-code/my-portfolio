@@ -47,9 +47,13 @@ export default function Contact({ behaviour }) {
       setForm({ name: '', email: '', reason: REASONS[0], message: '' });
       setRating(0);
       setTouched({});
-    } catch {
-      setStatus({ text: '▸ API unreachable — opening your mail app instead…', cls: 'bad' });
-      mailtoFallback(profile.email, payload);
+    } catch (err) {
+      if (err.message === 'Failed to fetch' || err.message.includes('NetworkError')) {
+        setStatus({ text: '▸ API unreachable — opening your mail app instead…', cls: 'bad' });
+        mailtoFallback(profile.email, payload);
+      } else {
+        setStatus({ text: `▸ ${err.message}`, cls: 'bad' });
+      }
     } finally {
       setSending(false);
     }

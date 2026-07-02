@@ -15,7 +15,8 @@ export default function Footer() {
             <a href={profile.github} target="_blank" rel="noopener">GitHub</a>
             <a href={profile.linkedin} target="_blank" rel="noopener">LinkedIn</a>
             <a href={`mailto:${profile.email}`}>Email</a>
-            <a href={profile.resumeFile} target="_blank" rel="noopener">Resume</a>
+            <a href={profile.resumeAIML} target="_blank" rel="noopener" download>Resume · AI/ML</a>
+            <a href={profile.resumeFSD} target="_blank" rel="noopener" download>Resume · Full-Stack</a>
           </div>
         </div>
         <div className="footer-divider" />

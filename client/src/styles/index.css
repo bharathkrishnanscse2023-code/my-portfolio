@@ -42,8 +42,11 @@ button { font-family: inherit; }
 .hud-right span { margin-left: 16px; }
 
 /* nav */
-nav { position: fixed; top: 38px; left: 0; right: 0; z-index: 70; transition: all .3s ease; }
-nav.scrolled { top: 0; background: rgba(8,13,24,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+.sys-header { position: fixed; top: 0; left: 0; right: 0; z-index: 80; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.sys-header.scrolled { transform: translateY(-38px); }
+
+nav { position: relative; z-index: 70; transition: all .3s ease; }
+nav.scrolled { background: rgba(8,13,24,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
 .nav-inner { max-width: var(--maxw); margin: 0 auto; padding: 14px max(20px, 4vw); display: flex; align-items: center; justify-content: space-between; }
 .brand { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; color: var(--white); letter-spacing: 1px; }
 .brand b { color: var(--cyan); }
@@ -146,6 +149,7 @@ section { padding: 96px 0; position: relative; z-index: 5; }
 .kv span:first-child { color: var(--text-faint); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
 .kv span:last-child { color: var(--text); }
 .kv .live { color: var(--cyan); }
+.about-resumes { display: flex; flex-direction: column; gap: 12px; }
 .about-resume { width: 100%; }
 
 /* experience & education timeline */
@@ -334,6 +338,17 @@ footer p { font-size: 13.5px; color: var(--text-dim); margin-bottom: 4px; }
 .modal-gh { width: 100%; justify-content: center; }
 .modal-close { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-faint); cursor: pointer; background: none; border: none; }
 
+/* landing page */
+.landing-page { position: fixed; inset: 0; z-index: 99999; background: var(--bg); display: flex; align-items: center; justify-content: center; flex-direction: column; transition: opacity 0.8s ease, visibility 0.8s; }
+.landing-page.fade-out { opacity: 0; visibility: hidden; pointer-events: none; }
+.landing-content { position: relative; z-index: 2; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.landing-badge { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--cyan); border: 1px solid var(--cyan-dim); padding: 6px 14px; border-radius: 20px; background: rgba(47,227,216,.1); margin-bottom: 24px; letter-spacing: 2px; }
+.landing-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 6vw, 64px); font-weight: 700; color: var(--white); margin-bottom: 12px; letter-spacing: -1px; }
+.landing-subtitle { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-dim); letter-spacing: 3px; margin-bottom: 48px; }
+.btn-launch { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700; padding: 16px 32px; border-radius: 12px; cursor: pointer; background: var(--cyan); color: #00100f; border: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s; box-shadow: 0 0 20px rgba(47,227,216,.2); }
+.btn-launch:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(47,227,216,.4); }
+.launch-icon { font-size: 18px; }
+
 /* responsive */
 @media(max-width: 900px) {
   .hero-grid, .about-grid, .skills-grid, .contact-grid, .exp-layout { grid-template-columns: 1fr; gap: 40px; }
@@ -361,3 +376,8 @@ footer p { font-size: 13.5px; color: var(--text-dim); margin-bottom: 4px; }
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .portrait .scan { display: none; }
 }
+/ *  
+ L a n d i n g  
+ P a g e  
+ * /  
+ 
