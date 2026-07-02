@@ -71,7 +71,6 @@ export default function Contact({ behaviour }) {
             <div className="ci"><div className="cii">✉</div><div><span className="ck">EMAIL</span><a className="cv" href={`mailto:${profile.email}`}>{profile.email}</a></div></div>
             <div className="ci"><div className="cii">☎</div><div><span className="ck">PHONE</span><a className="cv" href={`tel:${profile.phoneRaw}`}>{profile.phone}</a></div></div>
             <div className="ci"><div className="cii">⌥</div><div><span className="ck">GITHUB</span><a className="cv" href={profile.github} target="_blank" rel="noopener">{profile.githubLabel}</a></div></div>
-            <div className="ci"><div className="cii">◉</div><div><span className="ck">WEBSITE</span><a className="cv" href={profile.website} target="_blank" rel="noopener">{profile.websiteLabel}</a></div></div>
           </div>
 
           <div className="panel form">
