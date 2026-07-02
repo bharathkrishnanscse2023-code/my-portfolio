@@ -30,7 +30,7 @@ export const profile = {
     { to: 700, suffix: '+', label: 'Problems Solved' },
     { to: 11, suffix: '+', label: 'AI Projects Shipped' },
     { to: 25, suffix: '+', label: 'GitHub Repos' },
-    { to: 3, label: 'Internships' },
+    { to: 6, label: 'Internships' },
     { to: 5, suffix: '+', label: 'Hackathon Wins' },
   ],
   interests: ['Quantum Computing', 'Edge AI', 'Reinforcement Learning', 'Space Tech', 'Competitive Programming'],

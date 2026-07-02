@@ -1,5 +1,35 @@
 export const experience = [
   {
+    when: 'JUN – JUL 2026 · REMOTE',
+    role: 'Full-Stack Web Development Intern',
+    company: 'Prodigy InfoTech',
+    type: 'internship',
+    points: [
+      'Built and deployed responsive full-stack web applications, implementing both polished front-end interfaces and robust back-end REST APIs.',
+      'Delivered structured, task-based projects on schedule while strengthening end-to-end development and version-control workflows.',
+    ],
+  },
+  {
+    when: 'JUN – JUL 2026 · REMOTE',
+    role: 'Web Development & Designing Intern',
+    company: 'Oasis Infobyte',
+    type: 'internship',
+    points: [
+      'Developed and designed interactive, responsive web pages applying modern HTML5, CSS3, and JavaScript practices.',
+      'Delivered hands-on task projects independently, reinforcing UI/UX design and front-end implementation skills.',
+    ],
+  },
+  {
+    when: 'MAR – JUN 2026 · REMOTE',
+    role: 'Data Science & Machine Learning Intern',
+    company: 'Zaalima Development',
+    type: 'internship',
+    points: [
+      'Built and evaluated Data Science and Machine Learning models on real-world datasets, contributing directly to live project deliverables.',
+      'Applied EDA, feature engineering, and rigorous model evaluation to improve predictive performance across assigned tasks.',
+    ],
+  },
+  {
     when: 'MAR – APR 2026 · REMOTE',
     role: 'Machine Learning Intern',
     company: 'Saiket Systems',
