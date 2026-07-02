@@ -7,9 +7,12 @@
     "install:all": "npm --prefix client install && npm --prefix server install",
     "dev": "concurrently -n CLIENT,SERVER -c cyan,yellow \"npm --prefix client run dev\" \"npm --prefix server run dev\"",
     "build": "npm --prefix client run build",
-    "start": "npm --prefix server start"
+    "start": "npm --prefix server start",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "devDependencies": {
-    "concurrently": "^9.1.0"
+    "concurrently": "^9.1.0",
+    "wrangler": "^4.106.0"
   }
 }
