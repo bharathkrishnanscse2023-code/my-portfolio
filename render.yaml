@@ -1,20 +1,22 @@
-# Render Blueprint — single web service that runs the Express API AND
-# serves the built React client from the same origin (mirrors localhost).
+# Render Blueprint — API-only backend for the portfolio.
+# The React frontend is hosted separately on Vercel; this service runs the
+# Express API (/api/contact, /api/feedback, /api/analytics, /api/stats).
 # Deploy: push to GitHub, then on render.com → New → Blueprint → pick this repo.
 services:
   - type: web
-    name: bk-portfolio
+    name: bk-portfolio-api
     runtime: node
     plan: free
-    # install client + server deps, then build the React app into client/dist
-    buildCommand: npm run install:all && npm run build
-    # start the Express server (serves /api and the static client build)
+    rootDir: server
+    buildCommand: npm install
     startCommand: npm start
+    healthCheckPath: /api/health
     envVars:
       - key: NODE_VERSION
-        value: 20
+        value: "20"
+      # CORS: set this to your Vercel frontend URL, e.g. https://bk-portfolio.vercel.app
       - key: CLIENT_ORIGIN
-        sync: false   # set to your Render URL, e.g. https://bk-portfolio.onrender.com
+        sync: false
       - key: OWNER_EMAIL
         value: bharathkrishnans.cse2023@citchennai.net
       - key: SMTP_HOST

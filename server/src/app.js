@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { config } from './config.js';
@@ -35,11 +36,20 @@ app.use('/api/stats', statsRoutes);
 app.use('/api', notFound);
 app.use('/api', errorHandler);
 
-// serve the built React client (production single-service deploy)
+// serve the built React client only if it exists next to the server
+// (single-service deploy). When the frontend is hosted separately (e.g. Vercel),
+// the dist folder is absent and the server runs as an API-only service.
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const clientDist = path.resolve(__dirname, '../../client/dist');
-app.use(express.static(clientDist));
-// SPA fallback: any non-/api route returns index.html
-app.get('*', (_req, res) => res.sendFile(path.join(clientDist, 'index.html')));
+if (fs.existsSync(path.join(clientDist, 'index.html'))) {
+  app.use(express.static(clientDist));
+  // SPA fallback: any non-/api route returns index.html
+  app.get('*', (_req, res) => res.sendFile(path.join(clientDist, 'index.html')));
+  logger.info(`Serving client build from ${clientDist}`);
+} else {
+  // API-only mode: friendly root response
+  app.get('/', (_req, res) => res.json({ service: 'BK.sys API', status: 'online', mode: 'api-only' }));
+  logger.info('No client build found → running API-only (frontend hosted separately)');
+}
 
 export default app;
